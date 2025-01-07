@@ -1,18 +1,44 @@
 package com.example.tovodoo.todo;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import com.example.tovodoo.vokabel.VokabelDto;
 
 public class TodoItemDto {
+    private static long lastId = 0; // Static field to keep track of the last assigned id
 
-	private List<VokabelDto> vokabeln;
+    private Long id;
+    private String task;
+    private boolean completed;
 
-	public List<VokabelDto> getVokabeln() {
-		return vokabeln;
-	}
+    // Constructor
+    public TodoItemDto(@JsonProperty("task") String message) {
+        this.id = ++lastId; // Increment the lastId and assign it to the new instance
+        this.task = message;
+        this.completed = false; // Set complete to false by default
+    }
 
-	public void setVokabeln(List<VokabelDto> vokabeln) {
-		this.vokabeln = vokabeln;
-	}
+    // Getter for id
+    public Long getId() {
+        return id;
+    }
+
+    // Getter for message
+    public String getTask() {
+        return task;
+    }
+
+    // Setter for message
+    public void setTask(String message) {
+        this.task = message;
+    }
+
+    // Getter for complete
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    // Setter for complete
+    public void setCompleted(boolean complete) {
+        this.completed = complete;
+    }
 }
