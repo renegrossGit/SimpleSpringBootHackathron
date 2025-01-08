@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/todos")
+//@RestController
+//@RequestMapping("/api/todos")
 public class TodoListController {
-
+/* 
     @Autowired
     private TodoListService todoListService;
 
@@ -48,5 +48,5 @@ public class TodoListController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+    } */
 }
