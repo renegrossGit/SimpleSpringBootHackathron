@@ -35,6 +35,14 @@
     cursor: pointer;
     transition: transform 0.2s ease;
   }
+
+
+
+  .destroy:before {
+    content: '×'; /* Unicode for multiplication sign (×) */
+    font-size: 24px; /* Adjust as needed */
+    color: rgb(209, 24, 24); /* Adjust as needed */
+  }
   
   .todo-item .destroy:hover {
     transform: scale(1.2);

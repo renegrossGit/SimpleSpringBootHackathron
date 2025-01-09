@@ -36,3 +36,20 @@
   padding: 0;
   margin: 40px 0 0; /* Added margin to separate from the "Mark all as completed" section */
 }
+
+button.destroy:before {
+  content: '×'; /* Unicode for multiplication sign (×) */
+}
+
+button.destroy {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: red; /* Adjust as needed */
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  color: white;
+}
