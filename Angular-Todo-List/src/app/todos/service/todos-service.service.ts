@@ -161,17 +161,13 @@ export class TodosServiceService {
     }
 
     clearAllTodos(): void {
-      this.todos().forEach((todo) => {
-        if (todo.id !== undefined) { // Ensure todo.id is defined
-          this.todosDaoService.deleteTodo(todo.id).pipe(
-            tap(() => {
-              this.todos.update((todos) => todos.filter((t) => t.id !== todo.id));
-              this.applyFilter();
-            })
-          ).subscribe();
-        } else {
-          console.error('Todo ID is undefined:', todo);
-        }
-      });
+      this.todosDaoService.deleteAllTodos()
+        .subscribe(() => {
+          console.log('All todos deleted');
+          this.todos.update(() => []); // Clear the todos list in the state
+          this.applyFilter(); // Apply the filter if you have any
+        }, error => {
+          console.error('Error deleting todos:', error);
+        });
     }
 }

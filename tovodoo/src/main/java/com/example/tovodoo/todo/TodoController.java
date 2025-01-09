@@ -49,4 +49,10 @@ public class TodoController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @DeleteMapping("/all")
+    public ResponseEntity<Void> deleteAllTodos() {
+        todoService.removeAllTodos();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

@@ -20,6 +20,6 @@ export class FooterComponent {
   // Method to clear all todos and reload the page
   onClearAllTodos(): void {
     this.todosService.clearAllTodos(); // Clear todos in the service
-    window.location.reload(); // Reload the page to reflect the changes
+    //window.location.reload(); // Reload the page to reflect the changes
   }
 }

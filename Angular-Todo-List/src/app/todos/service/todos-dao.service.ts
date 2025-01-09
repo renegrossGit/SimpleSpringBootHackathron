@@ -31,4 +31,8 @@ export class TodosDaoService {
   deleteTodo(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  deleteAllTodos(): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/all`);
+  }
 }

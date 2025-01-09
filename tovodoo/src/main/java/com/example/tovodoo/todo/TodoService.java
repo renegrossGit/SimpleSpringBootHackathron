@@ -38,4 +38,8 @@ public class TodoService {
         }
         return false;
     }
+
+    public void removeAllTodos() {
+        todoRepository.deleteAll();
+    }
 }
